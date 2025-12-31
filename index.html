@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HOME -->
+<section class="page active" id="home">
+  <img src="home-cat.jpeg" class="img">
+  <p>hey i made something for you<br>will you see it?</p>
+  <div class="buttons">
+    <button onclick="go('yes')">YES</button>
+    <button onclick="go('no')">NO</button>
+  </div>
+</section>
+
+<!-- NO -->
+<section class="page" id="no">
+  <img src="angry-cat.jpeg" class="img">
+  <h2>HOW DARE YOUU!!</h2>
+  <button onclick="go('home')">BACK</button>
+</section>
+
+<!-- YES -->
+<section class="page" id="yes">
+  <img src="cute-cat.jpeg" class="img">
+  <p>Hehe 😽<br>click below for the surprise!</p>
+  <button onclick="go('gift')">NEXT</button>
+</section>
+
+<!-- GIFT -->
+<section class="page" id="gift">
+  <img src="gift-cat.jpeg" class="img clickable" onclick="go('camera')">
+  <p>Happy new year my kuchupuchu!!<br>click on the gift box</p>
+</section>
+
+<!-- CAMERA -->
+<section class="page" id="camera">
+  <img src="camera-cat.jpeg" class="img clickable" onclick="go('final')">
+  <p>SMILEEEEE<br>Click on the camera to reveal photo!!</p>
+</section>
+
+<!-- FINAL -->
+<section class="page" id="final">
+  <div class="polaroid-wrapper">
+
+    <!-- sticker cat -->
+    <img src="cat-removebg-preview (1).png" class="polaroid-sticker">
+
+    <!-- polaroid -->
+    <div class="polaroid">
+      <img src="Kuchi Puchi ta amar.png" class="polaroid-photo">
+      <p class="polaroid-text">Happy New Year Amr Bachcha Pakhi ❤️ <br></p>
+    </div>
+
+  </div>
+</section>
+
+<audio id="celebrationSong">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<script src="script.js"></script>
+</body>
+</html>

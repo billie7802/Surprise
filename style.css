@@ -1,0 +1,276 @@
+/* ===============================
+   GOOGLE FONT REQUIRED:
+   Patrick Hand
+   =============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   GLOBAL STYLES
+   =============================== */
+
+body {
+  background: #ffffff;
+  font-family: 'Patrick Hand', cursive;
+  color: #6b4a3a; /* handwritten brown */
+}
+
+/* ===============================
+   PAGE LAYOUT
+   =============================== */
+
+.page {
+  display: none;                /* IMPORTANT FIX */
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* ===============================
+   TEXT STYLE
+   =============================== */
+
+p,
+h2 {
+  font-size: 22px;
+  line-height: 1.4;
+  letter-spacing: 0.6px;
+  margin-bottom: 28px;
+  color: #6b4a3a;
+}
+
+/* ===============================
+   IMAGE STYLE
+   =============================== */
+
+.img {
+  width: 280px;
+  max-width: 90%;
+  margin-bottom: 20px;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   BUTTON GROUP
+   =============================== */
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===============================
+   BUTTON STYLE
+   =============================== */
+
+button {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  padding: 8px 38px;
+  background: #ffffff;
+
+  border: 2px solid #000000;
+  border-radius: 14px;
+
+  cursor: pointer;
+  position: relative;
+}
+
+/* Yellow shadow */
+button::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+
+  width: 100%;
+  height: 100%;
+
+  background: #f4c430;
+  border-radius: 14px;
+  z-index: -1;
+}
+
+/* Click effect */
+button:active {
+  transform: translate(2px, 2px);
+}
+
+button:active::after {
+  left: 2px;
+  top: 2px;
+}
+
+/* ===============================
+   FINAL PAGE
+   =============================== */
+
+.final-wrapper {
+  position: relative;
+  width: 320px;
+  max-width: 90%;
+  margin-bottom: 15px;
+}
+
+.final-main {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.final-sticker {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 90px;
+}
+
+/* ===============================
+   RESPONSIVE (Mobile)
+   =============================== */
+
+@media (max-width: 600px) {
+  p,
+  h2 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 7px 30px;
+  }
+
+  .img {
+    width: 220px;
+  }
+
+  .final-wrapper {
+    width: 260px;
+  }
+
+  .final-sticker {
+    width: 70px;
+    top: -14px;
+    right: -14px;
+  }
+}
+/* ===============================
+   FINAL POLAROID STYLE
+   =============================== */
+
+.polaroid-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 14px 14px 24px;
+  width: 340px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.polaroid-photo {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.polaroid-text {
+  margin-top: 12px;
+  font-size: 20px;
+  color: #6b4a3a;
+  letter-spacing: 0.5px;
+}
+
+/* cat sticker overlapping */
+.polaroid-sticker {
+  position: absolute;
+  top: -70px;
+  right: -20px;
+  width: 170px;
+  transform: rotate(-8deg);
+  z-index: 2;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+   =============================== */
+
+@media (max-width: 500px) {
+  .polaroid {
+    width: 200px;
+  }
+
+  .polaroid-text {
+    font-size: 18px;
+  }
+
+  .polaroid-sticker {
+    width: 100px;
+    top: -60px;
+    right: -10px;
+  }
+}
+
+/* ===============================
+   CELEBRATION HEARTS
+   =============================== */
+
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 4s linear forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* gentle pop when final page appears */
+#final.active {
+  animation: popIn 0.6s ease;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
